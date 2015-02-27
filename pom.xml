@@ -25,20 +25,20 @@
  </dependency>
    	<dependency>
   <groupId>org.apache.hive</groupId>
-  <artifactId>${hive.version}</artifactId>
-  <version>0.13.1-cdh5.2.0</version>
+  <artifactId>hive-exec</artifactId>
+  <version>${hive.version}</version>
  </dependency>
  
    	<dependency>
   <groupId>org.apache.hive</groupId>
-  <artifactId>${hive.version}</artifactId>
-  <version>0.13.1-cdh5.2.0</version>
+  <artifactId>hive-metastore</artifactId>
+  <version>${hive.version}</version>
  </dependency>
  
    	<dependency>
   <groupId>org.apache.hive</groupId>
-  <artifactId>${hive.version}</artifactId>
-  <version>0.13.1-cdh5.2.0</version>
+  <artifactId>hive-service</artifactId>
+  <version>${hive.version}</version>
  </dependency>
  
   		<dependency>
