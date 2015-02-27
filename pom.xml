@@ -7,7 +7,8 @@
 	<name>hive_jdbc_sample</name>
 
  	<properties>
-		<hadoop.version>2.3.0</hadoop.version>
+		<hadoop.version>2.4.0</hadoop.version>
+		<hive.version>0.13.1</hive.version>
 	</properties>
 	<dependencies>
 
@@ -20,23 +21,23 @@
   	<dependency>
   <groupId>org.apache.hive</groupId>
   <artifactId>hive-jdbc</artifactId>
-  <version>0.13.1-cdh5.2.0</version>
+  <version>${hive.version}</version>
  </dependency>
    	<dependency>
   <groupId>org.apache.hive</groupId>
-  <artifactId>hive-exec</artifactId>
-  <version>0.13.1-cdh5.2.0</version>
- </dependency>
- 
-   	<dependency>
-  <groupId>org.apache.hive</groupId>
-  <artifactId>hive-metastore</artifactId>
+  <artifactId>${hive.version}</artifactId>
   <version>0.13.1-cdh5.2.0</version>
  </dependency>
  
    	<dependency>
   <groupId>org.apache.hive</groupId>
-  <artifactId>hive-service</artifactId>
+  <artifactId>${hive.version}</artifactId>
+  <version>0.13.1-cdh5.2.0</version>
+ </dependency>
+ 
+   	<dependency>
+  <groupId>org.apache.hive</groupId>
+  <artifactId>${hive.version}</artifactId>
   <version>0.13.1-cdh5.2.0</version>
  </dependency>
  
@@ -62,8 +63,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 					<fork>true</fork>
 					<meminitial>1024m</meminitial>
 					<maxmem>2044m</maxmem>
