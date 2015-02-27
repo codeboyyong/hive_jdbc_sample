@@ -41,14 +41,14 @@ public class HiveJDBCSample_ProxyUser {
 		UserGroupInformation ugi = UserGroupInformation
 				.loginUserFromKeytabAndReturnUGI(HiveJDBCSample_kinit.loginPrincipal, HiveJDBCSample_kinit.keyTabLocation);
 
-	    UserGroupInformation proxyUser = ugi.createProxyUser("john", ugi);  
+	    //UserGroupInformation proxyUser = ugi.createProxyUser("john", ugi);  
 	        PrivilegedAction action = new PrivilegedAction(){
 
 			@Override
 			public Object run() {
     	        Connection con = null;
 				try {
-					Connection conn = DriverManager .getConnection(HiveJDBCSample_kinit.JDBC_URL );
+					Connection conn = DriverManager .getConnection(HiveJDBCSample_kinit.JDBC_URL +";hive.server2.proxy.user=bob" );
 					System.out.println("login OK ======");
 					printSomething(conn);
 				} catch (SQLException e) {
@@ -58,7 +58,7 @@ public class HiveJDBCSample_ProxyUser {
 			}
 	        	
 	        }; 
-		proxyUser.doAs(action);
+	        ugi.doAs(action);
 
 	}
 
